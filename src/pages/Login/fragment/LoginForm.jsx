@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {useForm} from 'react-hook-form'
 import loginHandler from './LoginHandler'
 import {Eye, EyeOff} from 'react-feather'
-import {Button, Container, Heading, FormControl, FormLabel, Input, FormErrorMessage, InputGroup, InputRightElement, IconButton, FormHelperText} from '@chakra-ui/react'
+import {Button, Box, Heading, FormControl, FormLabel, Input, Text, InputGroup, InputRightElement, IconButton, FormHelperText} from '@chakra-ui/react'
 
 export default function LoginForm() {
     const { register, formState: { errors }, handleSubmit} = useForm();
@@ -16,77 +16,54 @@ export default function LoginForm() {
     };
 
     return (
-        <Container>
-            <Heading>Login</Heading>
-            <FormControl method="POST">
-                <FormLabel>Email</FormLabel>
-                <Input 
-                    type="text"
-                    name="email"
-                    id="email"
-                    {...register("email", { required: true })}
-                />
-                {errors.email?.type === 'required' && <FormHelperText>Please fill your email</FormHelperText>}
-                <FormLabel>Password</FormLabel>
-                <InputGroup>
+        <Box>
+            <Box>
+                <Heading fontWeight={800}>Login</Heading>    
+                <Text fontSize='md' my={2}>Login to submit a report</Text>
+            </Box>
+            <Box>
+                <FormControl method="POST">
+                    <FormLabel>Email</FormLabel>
                     <Input 
-                        type={show ? 'text' : 'password'}
-                        name="password"
-                        id="password"
-                        {...register("password", { required: true })}
+                        type="text"
+                        name="email"
+                        id="email"
+                        {...register("email", { required: true })}
                     />
-                    <InputRightElement>
-                        <IconButton
-                          borderRadius="full"
-                          size="sm"
-                          variant="ghost"
-                          onClick={handleClick}
-                          aria-label={'whod hide'}
-                          icon={show ? <EyeOff /> : <Eye />}
+                    {errors.email?.type === 'required' && <FormHelperText textColor='red' mb={4}>Please fill your email</FormHelperText>}
+                    <FormLabel mt={4}>Password</FormLabel>
+                    <InputGroup>
+                        <Input 
+                            type={show ? 'text' : 'password'}
+                            name="password"
+                            id="password"
+                            {...register("password", { required: true })}
                         />
-                    </InputRightElement>
-                </InputGroup>
-                {errors.email?.type === 'required' && <FormHelperText>Please fill your password</FormHelperText>}
-                <Button
-                    mt={4}
-                    colorScheme='teal'
-                    isLoading={isLoading}
-                    type='submit'
-                    onClick={handleSubmit(async (values) => {
-                        await submitHandler(values);
-                    })}
-                >
-                    Submit
-                </Button>
-            </FormControl>
-            {/* <form method='POST' onSubmit={handleSubmit(async (values) => {
-                await submitHandler(values);
-            })}>
-                <input
-                    type="text"
-                    name="email"
-                    id="email"
-                    placeholder="email"
-                    {...register("email", { required: true })}
-                />
-                <label>{errors.email?.type === 'required' && "Please fill your email"}</label>
-                <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder="password"
-                    {...register("password", { required: true })}
-                />
-                <label>{errors.password?.type === 'required' && "Please fill your password"}</label>
-                <Button
-                    mt={4}
-                    colorScheme='teal'
-                    isLoading={isLoading}
-                    type='submit'
-                >
-                    Submit
-                </Button>
-            </form> */}
-        </Container>
+                        <InputRightElement>
+                            <IconButton
+                            borderRadius="full"
+                            size="sm"
+                            variant="ghost"
+                            onClick={handleClick}
+                            aria-label={'whod hide'}
+                            icon={show ? <EyeOff /> : <Eye />}
+                            />
+                        </InputRightElement>
+                    </InputGroup>
+                    {errors.email?.type === 'required' && <FormHelperText textColor='red'>Please fill your password</FormHelperText>}
+                    <Button
+                        mt={4}
+                        colorScheme='teal'
+                        isLoading={isLoading}
+                        type='submit'
+                        onClick={handleSubmit(async (values) => {
+                            await submitHandler(values);
+                        })}
+                    >
+                        Submit
+                    </Button>
+                </FormControl>
+            </Box>
+        </Box>
     );
 }
