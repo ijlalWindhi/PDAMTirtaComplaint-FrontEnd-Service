@@ -1,5 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 import { MdBuild , MdCall } from "react-icons/md"
 import {Stack, Button, Container} from '@chakra-ui/react'
 import {API_URL} from '../../utils/constants'
@@ -37,6 +38,11 @@ export default function Beranda() {
                     <h1 key={index}>{item.name}</h1>
                 )
             })}
+            <Link to='/login'>
+                <Button>
+                    Login
+                </Button>
+            </Link>
         </Container>
     </div>
   )
