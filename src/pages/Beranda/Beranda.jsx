@@ -9,7 +9,7 @@ export default function Beranda() {
     
     const getUser = () => {
         axios({ method: "GET",
-                url:base_url + 'user/'
+                url:API_URL + 'user/'
         })
             .then(res => {
                 setUser(res.data.user)
