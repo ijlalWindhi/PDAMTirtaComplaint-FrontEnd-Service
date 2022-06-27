@@ -2,8 +2,8 @@ import React,{useState, useEffect} from 'react'
 import axios from 'axios'
 import { MdBuild , MdCall } from "react-icons/md"
 import {Stack, Button, Container} from '@chakra-ui/react'
+import {API_URL} from '../../utils/constants'
 
-const base_url = 'https://pdam-tirta-sidoarjo.herokuapp.com/'
 export default function Beranda() {
     const [user, setUser] = useState([])
     
