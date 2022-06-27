@@ -27,7 +27,6 @@ const LOGIN_URL = API_URL + 'user/login'
             }else if(res.data.message === "User does not exist"){
                 alert(res.data.message)
             }
-            return res.data.message
         }
     })
   } catch(err){

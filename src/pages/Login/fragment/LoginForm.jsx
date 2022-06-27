@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Link} from 'react-router-dom'
 import {useForm} from 'react-hook-form'
 import loginHandler from './LoginHandler'
 import {Eye, EyeOff} from 'react-feather'
@@ -50,7 +51,8 @@ export default function LoginForm() {
                             />
                         </InputRightElement>
                     </InputGroup>
-                    {errors.email?.type === 'required' && <FormHelperText textColor='red'>Please fill your password</FormHelperText>}
+                    {errors.password?.type === 'required' && <FormHelperText textColor='red'>Please fill your password</FormHelperText>}
+                    <Text mt={4}>Dont have an account?<Link to='/register'> Register</Link></Text>
                     <Button
                         mt={4}
                         colorScheme='teal'
