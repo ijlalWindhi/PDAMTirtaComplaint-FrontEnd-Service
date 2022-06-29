@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import { MdBuild , MdCall } from "react-icons/md"
 import {Stack, Button, Container} from '@chakra-ui/react'
 import {API_URL} from '../../utils/constants'
+import Carousel from '../../components/fragments/carousel/Caraousel'
+import Navbar from '../../components/fragments/navbar/Navbar'
 
 export default function Beranda() {
     const [user, setUser] = useState([])
@@ -23,8 +25,9 @@ export default function Beranda() {
 
   return (
     <div>
-        <Container>
-            <Stack direction='row' spacing={4}>
+        {/* <Container> */}
+            <Navbar/>
+            {/* <Stack direction='row' spacing={4}>
                 <Button leftIcon={<MdBuild />} colorScheme='pink' variant='solid'>
                     Settings
                 </Button>
@@ -43,7 +46,8 @@ export default function Beranda() {
                     Login
                 </Button>
             </Link>
-        </Container>
+            <Carousel /> */}
+        {/* </Container> */}
     </div>
   )
 }
