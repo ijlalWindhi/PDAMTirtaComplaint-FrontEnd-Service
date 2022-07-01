@@ -27,26 +27,26 @@ export default function Beranda() {
     <div>
         {/* <Container> */}
             <Navbar/>
-            {/* <Stack direction='row' spacing={4}>
-                <Button leftIcon={<MdBuild />} colorScheme='pink' variant='solid'>
-                    Settings
-                </Button>
-                <Button rightIcon={<MdCall />} colorScheme='blue' variant='outline'>
-                    Call us
-                </Button>
-            </Stack>
-            <h1>Data User</h1>
-            {user.map((item, index) => {
-                return(
-                    <h1 key={index}>{item.name}</h1>
-                )
-            })}
+//             <Stack direction='row' spacing={4}>
+//                 <Button leftIcon={<MdBuild />} colorScheme='pink' variant='solid'>
+//                     Settings
+//                 </Button>
+//                 <Button rightIcon={<MdCall />} colorScheme='blue' variant='outline'>
+//                     Call us
+//                 </Button>
+//             </Stack>
+//             <h1>Data User</h1>
+//             {user.map((item, index) => {
+//                 return(
+//                     <h1 key={index}>{item.name}</h1>
+//                 )
+//             })}
             <Link to='/login'>
                 <Button>
                     Login
                 </Button>
             </Link>
-            <Carousel /> */}
+//             <Carousel />
         {/* </Container> */}
     </div>
   )
