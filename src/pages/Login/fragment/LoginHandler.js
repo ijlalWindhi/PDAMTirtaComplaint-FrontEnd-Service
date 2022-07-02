@@ -19,7 +19,7 @@ const LOGIN_URL = API_URL + 'user/login'
         if(res.data.data.role === 'admin'){
           window.location.href = '/admin'
         } else if(res.data.data.role === 'user'){
-          window.location.href = '/beranda'
+          window.location.href = '/'
         }
         } else {
             if(res.data.message === "Invalid Password"){
