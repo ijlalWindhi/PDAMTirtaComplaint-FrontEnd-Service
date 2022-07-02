@@ -28,7 +28,7 @@ const NavbarLink = ({ children, href }) => (
     _hover={{
       textDecoration: 'none',
       textColor: 'blue.700'
-    }}
+    }}    
     href={href}>
     {children}
   </Link>
