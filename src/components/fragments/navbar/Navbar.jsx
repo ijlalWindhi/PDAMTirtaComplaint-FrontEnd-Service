@@ -17,23 +17,6 @@ import {AlignCenter, X} from 'react-feather'
 import {NavLink} from 'react-router-dom'
 import Logo from '../../../assets/image/logo.svg'
 
-const Links = ['beranda', 'info', 'dukungan']
-
-const NavbarLink = ({ children, href }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={'md'}
-    textTransform={'uppercase'}
-    _hover={{
-      textDecoration: 'none',
-      textColor: 'blue.700'
-    }}    
-    href={href}>
-    {children}
-  </Link>
-);
-
 let getJson = localStorage.getItem('item')
 const NavbarLoginMenu = () => {
   if(getJson === null) {
@@ -87,9 +70,36 @@ export default function Navbar() {
             fontSize={'lg'}
             textColor={'gray.500'}
             display={{ base: 'none', md: 'flex' }}>
-            {Links.map((link) => (
-              <NavbarLink key={link} href={`/${link}`}>{link}</NavbarLink>
-            ))}
+            <Link
+              href='/'
+              px={2}
+              py={1}
+              rounded={'md'}
+              textTransform={'uppercase'}
+              _hover={{
+                textDecoration: 'none',
+                textColor: 'blue.700'
+              }}>Beranda</Link>
+              <Link
+              href=''
+              px={2}
+              py={1}
+              rounded={'md'}
+              textTransform={'uppercase'}
+              _hover={{
+                textDecoration: 'none',
+                textColor: 'blue.700'
+              }}>Info</Link>
+              <Link
+              href='/dukungan'
+              px={2}
+              py={1}
+              rounded={'md'}
+              textTransform={'uppercase'}
+              _hover={{
+                textDecoration: 'none',
+                textColor: 'blue.700'
+              }}>Dukungan</Link>
           </HStack>
         <Flex alignItems={'center'}>
           {NavbarLoginMenu()}
@@ -98,9 +108,36 @@ export default function Navbar() {
       {isOpen ? (
         <Box pb={4} display={{ md: 'none' }}>
           <Stack as={'nav'} spacing={4}>
-            {Links.map((link) => (
-              <NavbarLink key={link} href={`/${link}`}>{link}</NavbarLink>
-            ))}
+            <Link
+              href='/'
+              px={2}
+              py={1}
+              rounded={'md'}
+              textTransform={'uppercase'}
+              _hover={{
+                textDecoration: 'none',
+                textColor: 'blue.700'
+              }}>Beranda</Link>
+              <Link
+              href=''
+              px={2}
+              py={1}
+              rounded={'md'}
+              textTransform={'uppercase'}
+              _hover={{
+                textDecoration: 'none',
+                textColor: 'blue.700'
+              }}>Info</Link>
+              <Link
+              href='/dukungan'
+              px={2}
+              py={1}
+              rounded={'md'}
+              textTransform={'uppercase'}
+              _hover={{
+                textDecoration: 'none',
+                textColor: 'blue.700'
+              }}>Dukungan</Link>
           </Stack>
         </Box>
       ) : null}
