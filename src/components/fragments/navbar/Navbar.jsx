@@ -70,8 +70,8 @@ export default function Navbar() {
             fontSize={'lg'}
             textColor={'gray.500'}
             display={{ base: 'none', md: 'flex' }}>
-            <Link
-              href='/'
+            <NavLink to="/">
+              <Link
               px={2}
               py={1}
               rounded={'md'}
@@ -80,8 +80,9 @@ export default function Navbar() {
                 textDecoration: 'none',
                 textColor: 'blue.700'
               }}>Beranda</Link>
+            </NavLink>
+            <NavLink to="">
               <Link
-              href=''
               px={2}
               py={1}
               rounded={'md'}
@@ -90,8 +91,9 @@ export default function Navbar() {
                 textDecoration: 'none',
                 textColor: 'blue.700'
               }}>Info</Link>
+            </NavLink>
+            <NavLink to="/dukungan">
               <Link
-              href='/dukungan'
               px={2}
               py={1}
               rounded={'md'}
@@ -100,6 +102,7 @@ export default function Navbar() {
                 textDecoration: 'none',
                 textColor: 'blue.700'
               }}>Dukungan</Link>
+            </NavLink>
           </HStack>
         <Flex alignItems={'center'}>
           {NavbarLoginMenu()}
@@ -108,8 +111,8 @@ export default function Navbar() {
       {isOpen ? (
         <Box pb={4} display={{ md: 'none' }}>
           <Stack as={'nav'} spacing={4}>
-            <Link
-              href='/'
+            <NavLink to="/">
+              <Link
               px={2}
               py={1}
               rounded={'md'}
@@ -118,8 +121,9 @@ export default function Navbar() {
                 textDecoration: 'none',
                 textColor: 'blue.700'
               }}>Beranda</Link>
+            </NavLink>
+            <NavLink to="">
               <Link
-              href=''
               px={2}
               py={1}
               rounded={'md'}
@@ -128,8 +132,9 @@ export default function Navbar() {
                 textDecoration: 'none',
                 textColor: 'blue.700'
               }}>Info</Link>
+            </NavLink>
+            <NavLink to="/dukungan">
               <Link
-              href='/dukungan'
               px={2}
               py={1}
               rounded={'md'}
@@ -138,6 +143,7 @@ export default function Navbar() {
                 textDecoration: 'none',
                 textColor: 'blue.700'
               }}>Dukungan</Link>
+            </NavLink>
           </Stack>
         </Box>
       ) : null}
