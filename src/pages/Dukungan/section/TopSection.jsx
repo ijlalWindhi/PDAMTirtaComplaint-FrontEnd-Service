@@ -7,7 +7,7 @@ export default function TopSection() {
   return (
     <Center>
         <Box w={"90%"}>
-            <Heading textColor={"white"} my={["15px","30px"]}>Pusat Pengaduan</Heading>
+            <Heading textColor={"white"} my={["15px","30px"]} textAlign={{base:'center', lg:'left'}}>Pusat Pengaduan</Heading>
             <InputGroup>
                 <InputLeftElement>
                     <IconButton
