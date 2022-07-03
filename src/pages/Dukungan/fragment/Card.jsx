@@ -16,7 +16,7 @@ export default function Card() {
                 <Image src={IconPembayaran} width={['50%','60%']} padding={'5px'} bg={'gray.200'} borderRadius={'20px'} mx={'auto'}/>
                 <Text align={'center'} fontSize={"lg"} my={2}>Pembayaran</Text>
             </GridItem>
-            <Link to="/login">
+            <Link to="/pengaduanSarana">
                 <GridItem>
                     <Image src={IconSarana} width={['50%','60%']} padding={'20px'} bg={'gray.200'} borderRadius={'20px'} mx={'auto'}/>
                     <Text align={'center'} fontSize={"lg"} my={2}>Sarana</Text>

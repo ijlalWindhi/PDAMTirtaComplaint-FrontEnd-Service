@@ -5,7 +5,7 @@ import RegisterHandler from './RegisterHandler'
 import {Eye, EyeOff} from 'react-feather'
 import {Button, Box, Heading, Grid, GridItem, FormControl, FormLabel, Input, Text, InputGroup, InputRightElement, IconButton, FormHelperText} from '@chakra-ui/react'
 
-export default function LoginForm() {
+export default function RegisterForm() {
     const { register, formState: { errors }, handleSubmit} = useForm();
     const [isLoading, setIsLoading] = useState(false);
     const [show, setShow] = React.useState(false)

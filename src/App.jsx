@@ -3,6 +3,7 @@ import Beranda from './pages/Beranda/Beranda';
 import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
 import Dukungan from './pages/Dukungan/Dukungan'
+import PengaduanSarana from './pages/Pengaduan Sarana/PengaduanSarana';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
         <Route path="/dukungan" element={<Dukungan/>}/>
+        <Route path="/pengaduanSarana" element={<PengaduanSarana/>}/>
       </Routes>
     </>
   )
