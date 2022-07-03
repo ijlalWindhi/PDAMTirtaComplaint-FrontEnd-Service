@@ -62,7 +62,7 @@ const NavbarLoginMenu = () => {
         </MenuButton>
         <MenuList fontWeight={'semibold'}>
           <MenuItem>Profile</MenuItem>
-          <MenuItem bg={'red.400'} textColor={'white'} onClick={LogoutHandler} _hover={{textColor: "black"}}>Logout</MenuItem>
+          <MenuItem bg={'red.400'} textColor={'white'} onClick={LogoutHandler} _hover={{bg: "red.400"}}>Logout</MenuItem>
         </MenuList>
       </Menu>
     )
