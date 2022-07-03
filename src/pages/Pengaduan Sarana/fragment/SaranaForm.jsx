@@ -21,7 +21,7 @@ export default function SaranaForm() {
         await SaranaHandler(values);
     };
 
-    console.log(data)
+    console.log(data.id)
 
     return (
         <Box>
@@ -69,14 +69,14 @@ export default function SaranaForm() {
                   {...register("image", { required: true })}
               />
               {errors.image?.type === 'required' && <FormHelperText textColor='red' mb={4}>Please fill your image</FormHelperText>}
-              {/* <Input 
+              <Input 
                   display='none'
                   type="text"
                   name="id_user"
                   id="id_user"
                   value={data.id}
                   {...register("id_user")}
-              /> */}
+              />
               <Button
                   mt={4}
                   bg="blue.400"

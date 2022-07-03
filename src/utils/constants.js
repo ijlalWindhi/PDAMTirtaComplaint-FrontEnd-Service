@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:2004/"
+const API_URL = "https://pdam-tirta-sidoarjo.herokuapp.com/"
 
 export {
     API_URL
