@@ -4,7 +4,6 @@ import {
   Flex,
   Avatar,
   HStack,
-  Link,
   IconButton,
   Button,
   Menu,
@@ -17,7 +16,7 @@ import {
   Stack,
 } from '@chakra-ui/react';
 import {AlignCenter, X} from 'react-feather'
-import {NavLink} from 'react-router-dom'
+import {NavLink, Link} from 'react-router-dom'
 import Logo from '../../../assets/image/logo.svg'
 import LogoutHandler from './fragment/LogoutHandler'
 
@@ -95,7 +94,7 @@ export default function Navbar() {
           display={{ base: 'none', md: 'flex' }}>
           {dataNavbar.map((item, index) => {
             return(
-              <NavLink to={item.link} key={index}>
+              <Link to={item.link} key={index}>
                 <Text
                   px={2}
                   py={1}
@@ -107,7 +106,7 @@ export default function Navbar() {
                     textColor: 'blue.700'
                   }}
                 >{item.label}</Text>
-              </NavLink>
+              </Link>
             )
           })}
         </HStack>
@@ -120,8 +119,8 @@ export default function Navbar() {
           <Stack as={'nav'} spacing={4}>
             {dataNavbar.map((item, index) => {
               return(
-                <NavLink to={item.link} key={index}>
-                  <Link
+                <Link to={item.link} key={index}>
+                  <Text
                   px={2}
                   py={1}
                   rounded={'md'}
@@ -129,8 +128,8 @@ export default function Navbar() {
                   _hover={{
                     textDecoration: 'none',
                     textColor: 'blue.700'
-                  }}>{item.label}</Link>
-                </NavLink>
+                  }}>{item.label}</Text>
+                </Link>
               )
             })}
           </Stack>

@@ -1,5 +1,5 @@
-import {Box, Container} from '@chakra-ui/react'
-import {NavLink} from 'react-router-dom'
+import {Box} from '@chakra-ui/react'
+import {Link} from 'react-router-dom'
 import {RiCustomerService2Fill} from 'react-icons/ri'
 import "swiper/css/bundle";
 
@@ -21,7 +21,7 @@ export default function Beranda() {
             p={[2,4]}
             zIndex={'1'}
         >
-          <NavLink to='/pengaduanSarana'><RiCustomerService2Fill size={50} color={"blue"}/></NavLink>
+          <Link to='/pengaduanSarana'><RiCustomerService2Fill size={50} color={"blue"}/></Link>
         </Box>
     </Box>
   )
