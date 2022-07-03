@@ -8,7 +8,7 @@ import BottomSection from './section/BottomSection'
 export default function Dukungan() {
   const getJson = localStorage.getItem('item')
   if(getJson === null) {
-    window.location.href = '/login'
+    location.href = '/login'
   }
   return (
       <>
