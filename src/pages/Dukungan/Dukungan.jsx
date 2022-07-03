@@ -5,9 +5,11 @@ import TopSection from './section/TopSection'
 import MiddleSection from './section/MiddleSection'
 import BottomSection from './section/BottomSection'
 
-
-
 export default function Dukungan() {
+  const getJson = localStorage.getItem('item')
+  if(getJson === null) {
+    window.location.href = '/login'
+  }
   return (
       <>
         <Box bg={'gray.300'} minH={"100vh"}>
