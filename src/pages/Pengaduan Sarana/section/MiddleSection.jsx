@@ -1,7 +1,6 @@
 import {Center, Box, Heading } from '@chakra-ui/react'
 import React from 'react'
-// import FormSarana from '../fragment/SaranaForm'
-import FormSarana from '../fragment/SaranaForm1'
+import FormSarana from '../fragment/SaranaForm'
 
 export default function MiddleSection() {
   return (

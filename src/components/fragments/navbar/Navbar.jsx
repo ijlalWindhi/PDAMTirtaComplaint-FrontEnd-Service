@@ -59,8 +59,8 @@ const NavbarLoginMenu = () => {
             }
           />
         </MenuButton>
-        <MenuList fontWeight={'semibold'}>
-          <MenuItem>Profile</MenuItem>
+        <MenuList fontWeight={'semibold'} zIndex={10}>
+          {/* <MenuItem>Profile</MenuItem> */}
           <MenuItem bg={'red.400'} textColor={'white'} onClick={LogoutHandler} _hover={{bg: "red.400"}}>Logout</MenuItem>
         </MenuList>
       </Menu>
@@ -72,7 +72,7 @@ export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box bg={useColorModeValue('white')} px={[4,20]} py={[2,4]}>
+    <Box bg={useColorModeValue('white')} px={[4,20]} py={[2,4]} zIndex={10}>
       <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
         <IconButton
           size={'md'}

@@ -1,27 +1,44 @@
-import React, {useEffect, useState} from 'react';
-import {useForm} from 'react-hook-form'
-import SaranaHandler from './SaranaHandler'
-import {Button, Box, FormControl, FormLabel, Input, FormHelperText} from '@chakra-ui/react'
+import React, {useState} from 'react';
+import {Button, Box, FormControl, FormLabel, Input} from '@chakra-ui/react'
+import axios from 'axios';
+import {API_URL} from '../../../utils/constants'
 
 export default function SaranaForm() {
-    const { register, formState: { errors }, handleSubmit} = useForm();
     const [isLoading, setIsLoading] = useState(false);
-    const [data, setData] = useState({})
+    const [name, setName] = useState('')
+    const [date, setDate] = useState('')
+    const [address, setAddress] = useState('')
+    const [description, setDescription] = useState('')
+    const [image, setImage] = useState('')
 
-    useEffect (() => {
-      const value = JSON.parse(localStorage.getItem('item'))
-      if(value){
-        setData(value)
-      }
-    }, [])
-    
-    const submitHandler = async (values) => {
-        console.log(values)
-        setIsLoading(!isLoading)
-        await SaranaHandler(values);
-    };
+    const value = JSON.parse(localStorage.getItem('item'))
+    const id = value.id
+    console.log(id)
 
-    console.log(data.id)
+    const PENGADUAN_URL = API_URL + 'report/add'
+    const submitHandler = async (e) => {
+        let form = new FormData()
+        form.append('id_user', id)
+        form.append('name', name)
+        form.append('date', date)
+        form.append('address', address)
+        form.append('description', description)
+        form.append('image', image)
+
+        try{
+            axios.post(PENGADUAN_URL, form)
+            .then(res => {
+                setIsLoading(true)
+                // reload page
+                window.location.reload()
+                alert('Sukses memberikan pengaduan')
+                // navigate page to login
+                window.location='/dukungan'
+            })
+        } catch(err){
+            console.log(err)
+        }
+    }
 
     return (
         <Box>
@@ -32,50 +49,41 @@ export default function SaranaForm() {
                   name="name"
                   id="name"
                   placeholder='Kerusakan meteran air'
-                  {...register("name", { required: true })}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
               />
-              {errors.name?.type === 'required' && <FormHelperText textColor='red' mb={4}>Please fill your name</FormHelperText>}
               <FormLabel mt={4}>Tanggal</FormLabel>
               <Input 
                   type="date"
                   name="date"
                   id="date"
-                  {...register("date", { required: true })}
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
               />
-              {errors.date?.type === 'required' && <FormHelperText textColor='red' mb={4}>Please fill your date</FormHelperText>}
               <FormLabel mt={4}>Alamat</FormLabel>
               <Input 
                   type="text"
                   name="address"
                   id="address"
                   placeholder='Jl. Raya Cikarang No.1'
-                  {...register("address", { required: true })}
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
               />
-              {errors.address?.type === 'required' && <FormHelperText textColor='red' mb={4}>Please fill your address</FormHelperText>}
-              <FormLabel>Deskripsi</FormLabel>
+              <FormLabel mt={4}>Deskripsi</FormLabel>
               <Input 
                   type="text"
                   name="description"
                   id="description"
                   placeholder='Kerusakan meteran air sudah terjadi sejak 2 hari lalu dan sampai saat ini masih belum bisa digunakan'
-                  {...register("description", { required: true })}
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
               />
-              {errors.description?.type === 'required' && <FormHelperText textColor='red' mb={4}>Please fill your description</FormHelperText>}
               <FormLabel mt={4}>Gambar</FormLabel>
               <Input 
                   type="file"
                   name="image"
                   id="image"
-                  {...register("image", { required: true })}
-              />
-              {errors.image?.type === 'required' && <FormHelperText textColor='red' mb={4}>Please fill your image</FormHelperText>}
-              <Input 
-                  display='none'
-                  type="text"
-                  name="id_user"
-                  id="id_user"
-                  value={data.id}
-                  {...register("id_user")}
+                  onChange={(e) => setImage(e.target.files[0])}
               />
               <Button
                   mt={4}
@@ -83,9 +91,7 @@ export default function SaranaForm() {
                   textColor={'white'}
                   isLoading={isLoading}
                   type='submit'
-                  onClick={handleSubmit(async (values) => {
-                      await submitHandler(values);
-                  })}
+                  onClick={() => submitHandler({name, date, address, description, image, id})}
               >
                   Kirim
               </Button>

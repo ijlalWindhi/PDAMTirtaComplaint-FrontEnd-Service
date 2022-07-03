@@ -8,6 +8,7 @@ import BottomSection from './section/BottomSection'
 export default function PengaduanSarana() {
 const getJson = localStorage.getItem('item')
   if(getJson === null) {
+    alert('Silahkan login terlebih dahulu')
     window.location.href = '/login'
   }
   return (
