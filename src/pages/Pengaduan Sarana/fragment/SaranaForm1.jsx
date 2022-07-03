@@ -28,7 +28,7 @@ export default function SaranaForm() {
         try{
             axios.post(PENGADUAN_URL, form)
             .then(res => {
-                console.log(res)
+            setIsLoading(!isLoading)
             // reload page
             window.location.reload()
             alert('Sukses memberikan pengaduan')
