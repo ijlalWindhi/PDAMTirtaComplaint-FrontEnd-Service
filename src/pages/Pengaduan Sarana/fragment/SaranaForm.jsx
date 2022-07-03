@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Box, FormControl, FormLabel, Input} from '@chakra-ui/react'
+import {Button, Box, FormControl, FormLabel, Input, Textarea} from '@chakra-ui/react'
 import axios from 'axios';
 import {API_URL} from '../../../utils/constants'
 
@@ -72,7 +72,7 @@ export default function SaranaForm() {
                   required
               />
               <FormLabel mt={4}>Deskripsi</FormLabel>
-              <Input 
+              <Textarea 
                   type="text"
                   name="description"
                   id="description"
