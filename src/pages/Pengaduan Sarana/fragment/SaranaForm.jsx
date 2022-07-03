@@ -13,7 +13,6 @@ export default function SaranaForm() {
 
     const value = JSON.parse(localStorage.getItem('item'))
     const id = value.id
-    console.log(id)
 
     const PENGADUAN_URL = API_URL + 'report/add'
     const submitHandler = async (e) => {
@@ -51,6 +50,7 @@ export default function SaranaForm() {
                   placeholder='Kerusakan meteran air'
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  required
               />
               <FormLabel mt={4}>Tanggal</FormLabel>
               <Input 
@@ -59,6 +59,7 @@ export default function SaranaForm() {
                   id="date"
                   value={date}
                   onChange={(e) => setDate(e.target.value)}
+                  required
               />
               <FormLabel mt={4}>Alamat</FormLabel>
               <Input 
@@ -68,6 +69,7 @@ export default function SaranaForm() {
                   placeholder='Jl. Raya Cikarang No.1'
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
+                  required
               />
               <FormLabel mt={4}>Deskripsi</FormLabel>
               <Input 
@@ -77,6 +79,7 @@ export default function SaranaForm() {
                   placeholder='Kerusakan meteran air sudah terjadi sejak 2 hari lalu dan sampai saat ini masih belum bisa digunakan'
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
+                  required
               />
               <FormLabel mt={4}>Gambar</FormLabel>
               <Input 
@@ -84,6 +87,7 @@ export default function SaranaForm() {
                   name="image"
                   id="image"
                   onChange={(e) => setImage(e.target.files[0])}
+                  required
               />
               <Button
                   mt={4}
