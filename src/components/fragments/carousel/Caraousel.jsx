@@ -1,22 +1,25 @@
-import React, {useRef} from 'react'
-import {Swiper, SwiperSlide} from 'swiper/react';
-// import 'swiper.css';
+import React from 'react'
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination} from "swiper";
 
-import Image from '../../../assets/image/carousel.png'
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "./carousel.css";
+
+import Image1 from '../../../assets/image/carousel.png'
+import { Image } from '@chakra-ui/react';
 
 export default function Caraousel() {
   return (
-    <Swiper
-      spaceBetween={50}
-      slidesPerView={3}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
-    >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      ...
-    </Swiper>
+      <Swiper pagination={true} modules={[Pagination]} className="mySwiper" 
+      style={{
+        "--swiper-pagination-color": "#fff",
+      }}>
+        <SwiperSlide><Image src={Image1}/></SwiperSlide>
+        <SwiperSlide><Image src={Image1}/></SwiperSlide>
+        <SwiperSlide><Image src={Image1}/></SwiperSlide>
+      </Swiper>
   )
 }
