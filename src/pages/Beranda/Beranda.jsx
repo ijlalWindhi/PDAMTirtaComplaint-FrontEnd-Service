@@ -21,7 +21,7 @@ export default function Beranda() {
             p={[2,4]}
             zIndex={'1'}
         >
-          <Link to='/pengaduanSarana'><RiCustomerService2Fill size={50} color={"blue"}/></Link>
+          <Link to='/dukungan/pengaduanSarana'><RiCustomerService2Fill size={50} color={"blue"}/></Link>
         </Box>
     </Box>
   )
