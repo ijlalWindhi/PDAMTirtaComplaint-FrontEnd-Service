@@ -48,6 +48,7 @@ export default function ModalReview(props) {
 
         try {
             axios.post(PENGADUAN_URL, form).then((res) => {
+                // set loading button
                 setIsLoading(true);
                 // reload page
                 window.location.reload();
