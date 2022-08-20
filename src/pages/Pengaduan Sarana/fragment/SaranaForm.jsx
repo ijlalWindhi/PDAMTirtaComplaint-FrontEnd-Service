@@ -56,7 +56,7 @@ export default function SaranaForm() {
                     onChange={(e) => setName(e.target.value)}
                     required
                 />
-                <FormLabel mt={4}>Tanggal</FormLabel>
+                <FormLabel mt={4}>Tanggal*</FormLabel>
                 <Input
                     type="date"
                     name="date"
