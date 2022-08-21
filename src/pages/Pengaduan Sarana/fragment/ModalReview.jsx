@@ -55,7 +55,7 @@ export default function ModalReview(props) {
                 console.log(res);
                 alert("Sukses memberikan pengaduan");
                 // navigate page to login
-                window.location = "/dukungan";
+                window.location = "/dukungan/reviewFeedback";
             });
         } catch (err) {
             console.log(err);
