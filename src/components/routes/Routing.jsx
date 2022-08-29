@@ -5,6 +5,7 @@ import Register from "../../pages/Register/Register";
 import Dukungan from "../../pages/Dukungan/Dukungan";
 import PengaduanSarana from "../../pages/Pengaduan Sarana/PengaduanSarana";
 import ReviewFeedback from "../../pages/Review Feedback/ReviewFeedback";
+import HistoryReport from "../../pages/History Report/HistoryReport";
 
 export default function Routing() {
     return (
@@ -22,6 +23,7 @@ export default function Routing() {
                 path="/dukungan/reviewFeedback"
                 element={<ReviewFeedback />}
             />
+            <Route path="/riwayatLaporan" element={<HistoryReport />} />
         </Routes>
     );
 }

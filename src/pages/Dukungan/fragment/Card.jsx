@@ -9,7 +9,11 @@ export default function Card() {
     const data = [
         { name: "Pembayaran", icon: IconPembayaran, link: "/dukungan" },
         { name: "Sarana", icon: IconSarana, link: "/dukungan/pengaduanSarana" },
-        { name: "Pelayanan", icon: IconPelayanan, link: "/dukungan" },
+        {
+            name: "Riwayat Laporan",
+            icon: IconPelayanan,
+            link: "/riwayatLaporan",
+        },
     ];
 
     return (
